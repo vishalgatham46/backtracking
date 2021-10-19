@@ -8,8 +8,12 @@
     <link rel="icon" href="./backtracking.png">
 </head>
 <body>
-    <h1><b>Backtracking</b></h1>
-    Copyright &copy;2002 by David Matuszek
+    <header>
+        <font size="6"><b>Backtracking</b></font>
+        <br>
+        Copyright &copy;2002 by David Matuszek
+    </header>
+    <section>
     <p>Backtracking is a form of recursion.</p>
     <p>The usual scenario is that you are faced with a number of options, and you must choose one of these. After you make your choice you will get a new set of options; just what set of options you get depends on what choice you made. This procedure is repeated over and over until you reach a final state. If you made a good sequence of choices, your final state is a <i>goal state</i>; if you didn't, it isn't.</p>
     <p>Conceptually, you start at the root of a tree; the tree probably has some good leaves and some bad leaves, though it may be that the leaves are all good or all bad. You want to get to a good leaf. At each node, beginning with the root, you choose one of its children to move to, and you keep this up until you get to a leaf.</p>
@@ -31,6 +35,8 @@
     </ol>
     <p>In this example we drew a picture of a tree. The tree is an abstract model of the possible sequences of choices we could make. There is also a data structure called a tree, but usually we don't have a data structure to tell us what choices we have. (If we do have an actual tree data structure, backtracking on it is called <i>depth-first tree searching.)</i></p>
     <br>
+    </section>  
+    <section>
     <div><font size="4"><b>The backtracking algorithm.</b></font></div>
     <p>Here is the algorithm (in pseudocode) for doing backtracking from a given node n:</p>
     <pre><font color="red" size="4"> 
@@ -76,6 +82,8 @@
             <li>Otherwise, search the subtrees until you find one containing a goal node, or until you have searched them all unsuccessfully.</li>
         </ol>
     </ul>
+    </section>
+    <section>
     <div><font size="4"><b>Non-recursive backtracking, using a stack</b></font></div>
     <p>Backtracking is a rather typical recursive algorithm, and any recursive algorithm can be rewritten as a stack algorithm. In fact, that is how your recursive algorithms are translated into machine or assembly language.</p>
     <pre>
@@ -122,6 +130,7 @@
             }
         </font>
     </pre>
+    </section>
 <div><font size="4"><b>Keeping backtracking simple</b></font></div>
 
 <p>All of these versions of the backtracking algorithm are pretty simple, but when applied to a real problem, they can get pretty cluttered up with details. Even determining whether the node is a leaf can be complex: for example, if the path represents a series of moves in a chess endgame problem, the leaves are the checkmate and stalemate solutions.</p>
